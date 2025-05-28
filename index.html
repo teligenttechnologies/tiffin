@@ -1,0 +1,369 @@
+<!DOCTYPE html>
+<html lang="en" >
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Fadu Food Fiesta</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+  <style>
+    html {
+      scroll-behavior: smooth;
+    }
+    .bg-hero {
+      background-image: url('https://images.unsplash.com/photo-1600891964599-f61ba0e24092?ixlib=rb-4.0.3&auto=format&fit=crop&w=1950&q=80');
+      background-size: cover;
+      background-position: center;
+    }
+    .hero-overlay {
+      background: rgba(0, 0, 0, 0.5);
+    }
+    /* Navbar transition for scroll */
+    header.scrolled {
+      background-color: rgba(0,0,0,0.95) !important;
+      transition: background-color 0.3s ease-in-out;
+    }
+  </style>
+</head>
+<body class="bg-gray-900 text-white font-sans">
+
+  <!-- Navbar -->
+  <header class="fixed top-0 w-full z-50 bg-black bg-opacity-70 shadow-md transition-colors duration-300">
+    <div class="max-w-7xl mx-auto px-4 py-4 flex justify-between items-center">
+      <h1 class="text-2xl font-bold text-yellow-400 cursor-pointer">Fittin Tiffin</h1>
+      <nav>
+        <ul id="nav-links" class="hidden md:flex space-x-6">
+          <li><a href="#home" class="hover:text-yellow-400">Home</a></li>
+          <li><a href="#about" class="hover:text-yellow-400">About</a></li>
+          <li><a href="menu.html" class="hover:text-yellow-400">Menu</a></li>
+          <li><a href="#chefs" class="hover:text-yellow-400">Chefs</a></li>
+          <li><a href="#testimonials" class="hover:text-yellow-400">Testimonials</a></li>
+          <li><a href="#contact" class="hover:text-yellow-400">Contact</a></li>
+        </ul>
+      </nav>
+
+      <!-- Hamburger -->
+      <button id="hamburger" aria-label="Toggle menu" class="md:hidden focus:outline-none">
+        <i class="fa fa-bars text-yellow-400 text-2xl"></i>
+      </button>
+    </div>
+    <!-- Mobile menu -->
+    <ul id="mobile-menu" class="md:hidden bg-black bg-opacity-90 hidden flex-col space-y-4 py-4 px-6 text-center text-yellow-400 font-semibold">
+      <li><a href="#home" class="block hover:text-yellow-300">Home</a></li>
+      <li><a href="#about" class="block hover:text-yellow-300">About</a></li>
+      <li><a href="menu.html" class="block hover:text-yellow-300">Menu</a></li>
+      <li><a href="#chefs" class="block hover:text-yellow-300">Chefs</a></li>
+      <li><a href="#testimonials" class="block hover:text-yellow-300">Testimonials</a></li>
+      <li><a href="#contact" class="block hover:text-yellow-300">Contact</a></li>
+    </ul>
+  </header>
+
+  <!-- Hero Section -->
+  <section id="home" class="bg-hero h-screen flex items-center justify-center text-center px-4">
+    <div class="bg-black bg-opacity-60 p-8 rounded-xl max-w-xl mx-auto">
+      <h2 class="text-4xl md:text-6xl font-bold text-yellow-400">Taste The Best</h2>
+      <p class="mt-4 text-lg md:text-2xl">Delicious food delivered to your door</p>
+      <button class="mt-6 px-6 py-3 bg-yellow-400 text-black font-semibold rounded-full hover:bg-yellow-300 transition">Explore Menu</button>
+    </div>
+  </section>
+
+  <!-- About Section -->
+  <section id="about" class="py-20 bg-gray-900 text-center max-w-5xl mx-auto px-4">
+    <h2 class="text-4xl font-bold text-yellow-400 mb-6">About Us</h2>
+    <p class="text-lg text-gray-300 mb-10">
+      At <span class="text-yellow-400 font-semibold">FoodFiesta</span>, we blend taste and tradition into every dish.
+      With over a decade of excellence, we serve unforgettable culinary experiences that leave a lasting impression.
+    </p>
+
+    <!-- Counters -->
+    <div class="grid grid-cols-1 md:grid-cols-3 gap-10 text-white mt-12">
+      <div>
+        <h3 class="text-5xl font-bold text-yellow-400 counter" data-target="12">0</h3>
+        <p class="text-lg mt-2">Years of Experience</p>
+      </div>
+      <div>
+        <h3 class="text-5xl font-bold text-yellow-400 counter" data-target="1500">0</h3>
+        <p class="text-lg mt-2">Happy Customers</p>
+      </div>
+      <div>
+        <h3 class="text-5xl font-bold text-yellow-400 counter" data-target="240">0</h3>
+        <p class="text-lg mt-2">Unique Recipes</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Menu Section -->
+  <section id="menu" class="py-20 bg-gray-800 text-white max-w-6xl mx-auto px-4">
+    <h2 class="text-4xl font-bold text-yellow-400 text-center mb-10">Our Menu</h2>
+
+    <!-- Tabs -->
+    <div class="flex justify-center mb-10 space-x-8">
+      <button class="menu-tab-btn text-lg font-semibold text-yellow-400 border-b-2 border-yellow-400 pb-2" data-tab="veg">Veg</button>
+      <button class="menu-tab-btn text-lg font-semibold text-gray-300 hover:text-yellow-400 pb-2" data-tab="nonveg">Non-Veg</button>
+      <button class="menu-tab-btn text-lg font-semibold text-gray-300 hover:text-yellow-400 pb-2" data-tab="drinks">Drinks</button>
+    </div>
+
+    <!-- Menu Items Container -->
+    <div>
+      <!-- Veg Menu -->
+      <div class="menu-tab" id="veg">
+        <div class="grid md:grid-cols-3 gap-8">
+          <div class="bg-gray-700 rounded-lg p-5 hover:scale-105 transform transition duration-300 shadow-lg">
+            <img src="https://images.unsplash.com/photo-1600891964599-f61ba0e24092?auto=format&fit=crop&w=600&q=80" alt="Paneer Butter Masala" class="rounded-md mb-4 w-full h-48 object-cover" />
+            <h3 class="text-xl font-semibold mb-2">Paneer Butter Masala</h3>
+            <p class="mb-2 text-gray-300">Creamy tomato gravy with soft paneer cubes.</p>
+            <p class="font-bold text-yellow-400">₹250</p>
+          </div>
+          <div class="bg-gray-700 rounded-lg p-5 hover:scale-105 transform transition duration-300 shadow-lg">
+            <img src="https://images.unsplash.com/photo-1568605114967-8130f3a36994?auto=format&fit=crop&w=600&q=80" alt="Veg Biryani" class="rounded-md mb-4 w-full h-48 object-cover" />
+            <h3 class="text-xl font-semibold mb-2">Veg Biryani</h3>
+            <p class="mb-2 text-gray-300">Aromatic basmati rice with mixed vegetables.</p>
+            <p class="font-bold text-yellow-400">₹220</p>
+          </div>
+          <div class="bg-gray-700 rounded-lg p-5 hover:scale-105 transform transition duration-300 shadow-lg">
+            <img src="https://images.unsplash.com/photo-1604908177529-dbd431e53d1b?auto=format&fit=crop&w=600&q=80" alt="Masala Dosa" class="rounded-md mb-4 w-full h-48 object-cover" />
+            <h3 class="text-xl font-semibold mb-2">Masala Dosa</h3>
+            <p class="mb-2 text-gray-300">Crispy dosa with spiced potato filling.</p>
+            <p class="font-bold text-yellow-400">₹180</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Non-Veg Menu -->
+      <div class="menu-tab hidden" id="nonveg">
+        <div class="grid md:grid-cols-3 gap-8">
+          <div class="bg-gray-700 rounded-lg p-5 hover:scale-105 transform transition duration-300 shadow-lg">
+            <img src="https://images.unsplash.com/photo-1613145992053-7e5b0e4ca7cd?auto=format&fit=crop&w=600&q=80" alt="Butter Chicken" class="rounded-md mb-4 w-full h-48 object-cover" />
+            <h3 class="text-xl font-semibold mb-2">Butter Chicken</h3>
+            <p class="mb-2 text-gray-300">Tender chicken in creamy tomato sauce.</p>
+            <p class="font-bold text-yellow-400">₹350</p>
+          </div>
+          <div class="bg-gray-700 rounded-lg p-5 hover:scale-105 transform transition duration-300 shadow-lg">
+            <img src="https://images.unsplash.com/photo-1543352634-7d1bbf862290?auto=format&fit=crop&w=600&q=80" alt="Fish Curry" class="rounded-md mb-4 w-full h-48 object-cover" />
+            <h3 class="text-xl font-semibold mb-2">Fish Curry</h3>
+            <p class="mb-2 text-gray-300">Spicy and tangy fish cooked to perfection.</p>
+            <p class="font-bold text-yellow-400">₹320</p>
+          </div>
+          <div class="bg-gray-700 rounded-lg p-5 hover:scale-105 transform transition duration-300 shadow-lg">
+            <img src="https://images.unsplash.com/photo-1600891964343-b9f645f57ac9?auto=format&fit=crop&w=600&q=80" alt="Chicken Tikka" class="rounded-md mb-4 w-full h-48 object-cover" />
+            <h3 class="text-xl font-semibold mb-2">Chicken Tikka</h3>
+            <p class="mb-2 text-gray-300">Smoky grilled chicken pieces.</p>
+            <p class="font-bold text-yellow-400">₹300</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Drinks Menu -->
+      <div class="menu-tab hidden" id="drinks">
+        <div class="grid md:grid-cols-3 gap-8">
+          <div class="bg-gray-700 rounded-lg p-5 hover:scale-105 transform transition duration-300 shadow-lg">
+            <img src="https://images.unsplash.com/photo-1510626176961-4b0d776a0b89?auto=format&fit=crop&w=600&q=80" alt="Mango Shake" class="rounded-md mb-4 w-full h-48 object-cover" />
+            <h3 class="text-xl font-semibold mb-2">Mango Shake</h3>
+            <p class="mb-2 text-gray-300">Fresh mango blended with milk and ice.</p>
+            <p class="font-bold text-yellow-400">₹120</p>
+          </div>
+          <div class="bg-gray-700 rounded-lg p-5 hover:scale-105 transform transition duration-300 shadow-lg">
+            <img src="https://images.unsplash.com/photo-1509042239860-f550ce710b93?auto=format&fit=crop&w=600&q=80" alt="Lemonade" class="rounded-md mb-4 w-full h-48 object-cover" />
+            <h3 class="text-xl font-semibold mb-2">Lemonade</h3>
+            <p class="mb-2 text-gray-300">Refreshing lemon drink with mint.</p>
+            <p class="font-bold text-yellow-400">₹100</p>
+          </div>
+          <div class="bg-gray-700 rounded-lg p-5 hover:scale-105 transform transition duration-300 shadow-lg">
+            <img src="https://images.unsplash.com/photo-1524594157367-5e2135f75c0a?auto=format&fit=crop&w=600&q=80" alt="Coffee" class="rounded-md mb-4 w-full h-48 object-cover" />
+            <h3 class="text-xl font-semibold mb-2">Coffee</h3>
+            <p class="mb-2 text-gray-300">Strong and aromatic hot coffee.</p>
+            <p class="font-bold text-yellow-400">₹110</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Chefs Section -->
+  <section id="chefs" class="py-20 bg-gray-900 text-white max-w-6xl mx-auto px-4 text-center">
+    <h2 class="text-4xl font-bold text-yellow-400 mb-10">Meet Our Chefs</h2>
+    <div class="grid md:grid-cols-3 gap-8">
+      <div class="bg-gray-800 rounded-lg p-6 hover:scale-105 transform transition duration-300 shadow-lg">
+        <img src="https://randomuser.me/api/portraits/men/32.jpg" alt="Chef Ramesh" class="w-40 h-40 rounded-full mx-auto mb-4 object-cover" />
+        <h3 class="text-2xl font-semibold mb-1">Chef Ramesh</h3>
+        <p class="text-yellow-400 mb-3">Head Chef</p>
+        <p class="text-gray-300">Expert in traditional Indian cuisine with 15 years of experience.</p>
+      </div>
+      <div class="bg-gray-800 rounded-lg p-6 hover:scale-105 transform transition duration-300 shadow-lg">
+        <img src="https://randomuser.me/api/portraits/women/44.jpg" alt="Chef Anjali" class="w-40 h-40 rounded-full mx-auto mb-4 object-cover" />
+        <h3 class="text-2xl font-semibold mb-1">Chef Anjali</h3>
+        <p class="text-yellow-400 mb-3">Pastry Chef</p>
+        <p class="text-gray-300">Master baker specializing in desserts and pastries.</p>
+      </div>
+      <div class="bg-gray-800 rounded-lg p-6 hover:scale-105 transform transition duration-300 shadow-lg">
+        <img src="https://randomuser.me/api/portraits/men/47.jpg" alt="Chef Vikram" class="w-40 h-40 rounded-full mx-auto mb-4 object-cover" />
+        <h3 class="text-2xl font-semibold mb-1">Chef Vikram</h3>
+        <p class="text-yellow-400 mb-3">Sous Chef</p>
+        <p class="text-gray-300">Specialist in fusion and experimental cuisine.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Testimonials Section -->
+  <section id="testimonials" class="py-20 bg-gray-800 text-white max-w-5xl mx-auto px-4 text-center relative">
+    <h2 class="text-4xl font-bold text-yellow-400 mb-12">What Our Customers Say</h2>
+
+    <div id="testimonial-container" class="overflow-hidden relative">
+      <div id="testimonial-slider" class="flex transition-transform duration-500 ease-in-out">
+        <div class="min-w-full px-8">
+          <p class="text-lg italic mb-6">"The food here is just amazing! The flavors are authentic and the delivery was super quick."</p>
+          <p class="font-bold text-yellow-400">- Priya Sharma</p>
+        </div>
+        <div class="min-w-full px-8 ">
+          <p class="text-lg italic mb-6">"Great variety and the chefs really know their craft. Highly recommended!"</p>
+          <p class="font-bold text-yellow-400">- Arjun Mehta</p>
+        </div>
+        <div class="min-w-full px-8 ">
+          <p class="text-lg italic mb-6">"The drinks and desserts are a must-try. Never been disappointed."</p>
+          <p class="font-bold text-yellow-400">- Neha Gupta</p>
+        </div>
+      </div>
+      <!-- Dots -->
+      <div class="flex justify-center mt-8 space-x-3">
+        <button class="testimonial-dot w-3 h-3 rounded-full bg-yellow-400" data-index="0" aria-label="Testimonial 1"></button>
+        <button class="testimonial-dot w-3 h-3 rounded-full bg-gray-500" data-index="1" aria-label="Testimonial 2"></button>
+        <button class="testimonial-dot w-3 h-3 rounded-full bg-gray-500" data-index="2" aria-label="Testimonial 3"></button>
+      </div>
+    </div>
+  </section>
+
+  <!-- Contact Section -->
+  <section id="contact" class="py-20 bg-gray-900 text-white max-w-4xl mx-auto px-6">
+    <h2 class="text-4xl font-bold text-yellow-400 mb-10 text-center">Contact Us</h2>
+    <form class="space-y-6 max-w-xl mx-auto" action="#" method="POST" novalidate>
+      <div>
+        <label for="name" class="block mb-2 font-semibold">Name</label>
+        <input
+          id="name"
+          name="name"
+          type="text"
+          required
+          class="w-full px-4 py-3 rounded-md bg-gray-800 border border-gray-700 focus:border-yellow-400 focus:outline-none"
+          placeholder="Your Name"
+        />
+      </div>
+      <div>
+        <label for="email" class="block mb-2 font-semibold">Email</label>
+        <input
+          id="email"
+          name="email"
+          type="email"
+          required
+          class="w-full px-4 py-3 rounded-md bg-gray-800 border border-gray-700 focus:border-yellow-400 focus:outline-none"
+          placeholder="you@example.com"
+        />
+      </div>
+      <div>
+        <label for="message" class="block mb-2 font-semibold">Message</label>
+        <textarea
+          id="message"
+          name="message"
+          rows="5"
+          required
+          class="w-full px-4 py-3 rounded-md bg-gray-800 border border-gray-700 focus:border-yellow-400 focus:outline-none"
+          placeholder="Write your message here..."
+        ></textarea>
+      </div>
+      <button
+        type="submit"
+        class="w-full py-3 bg-yellow-400 text-black font-semibold rounded-full hover:bg-yellow-300 transition"
+      >
+        Send Message
+      </button>
+    </form>
+  </section>
+
+  <footer class="bg-gray-800 text-gray-400 py-6 text-center">
+    &copy; 2025 FoodFiesta. All rights reserved.
+  </footer>
+
+  <!-- JS -->
+  <script>
+    // Hamburger toggle
+    const hamburger = document.getElementById('hamburger');
+    const mobileMenu = document.getElementById('mobile-menu');
+    hamburger.addEventListener('click', () => {
+      mobileMenu.classList.toggle('hidden');
+    });
+
+    // Navbar background on scroll
+    const header = document.querySelector('header');
+    window.addEventListener('scroll', () => {
+      if(window.scrollY > 50) {
+        header.classList.add('scrolled');
+      } else {
+        header.classList.remove('scrolled');
+      }
+    });
+
+    // Menu tabs switching
+    const tabButtons = document.querySelectorAll('.menu-tab-btn');
+    const menuTabs = document.querySelectorAll('.menu-tab');
+    tabButtons.forEach(btn => {
+      btn.addEventListener('click', () => {
+        tabButtons.forEach(b => {
+          b.classList.remove('border-yellow-400', 'text-yellow-400');
+          b.classList.add('text-gray-300');
+        });
+        btn.classList.add('border-yellow-400', 'text-yellow-400');
+        tabButtons.forEach(b => b.classList.remove('border-b-2'));
+
+        menuTabs.forEach(tab => {
+          tab.classList.add('hidden');
+        });
+
+        const target = btn.getAttribute('data-tab');
+        document.getElementById(target).classList.remove('hidden');
+      });
+    });
+
+    // Counter animation
+    const counters = document.querySelectorAll('.counter');
+    counters.forEach(counter => {
+      const updateCount = () => {
+        const target = +counter.getAttribute('data-target');
+        const count = +counter.innerText;
+        const increment = target / 100;
+
+        if(count < target) {
+          counter.innerText = Math.ceil(count + increment);
+          setTimeout(updateCount, 20);
+        } else {
+          counter.innerText = target;
+        }
+      };
+      updateCount();
+    });
+
+    // Testimonials slider
+    const slider = document.getElementById('testimonial-slider');
+    const dots = document.querySelectorAll('.testimonial-dot');
+    let currentIndex = 0;
+
+    const showTestimonial = index => {
+      slider.style.transform = `translateX(-${index * 100}%)`;
+      dots.forEach(dot => dot.classList.replace('bg-yellow-400', 'bg-gray-500'));
+      dots[index].classList.replace('bg-gray-500', 'bg-yellow-400');
+      currentIndex = index;
+    };
+
+    dots.forEach(dot => {
+      dot.addEventListener('click', () => {
+        showTestimonial(+dot.dataset.index);
+      });
+    });
+
+    // Auto slide every 5 seconds
+    setInterval(() => {
+      let nextIndex = (currentIndex + 1) % dots.length;
+      showTestimonial(nextIndex);
+    }, 5000);
+  </script>
+
+</body>
+</html>

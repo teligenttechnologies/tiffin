@@ -1,0 +1,381 @@
+<!DOCTYPE html>
+<html lang="en" >
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Fadu Food Menu with Navbar</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="bg-gray-900 text-white font-sans">
+
+  <!-- Navbar -->
+  <nav class="bg-gray-800 bg-opacity-90 fixed w-full z-50 shadow-md">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="flex justify-between items-center h-16">
+        <a href="#" class="text-yellow-400 text-3xl font-extrabold tracking-widest hover:text-yellow-300">
+          Fittin Tiffin
+        </a>
+        <div class="hidden md:flex space-x-8">
+          <a href="index.html" class="text-gray-300 hover:text-yellow-400 font-semibold transition duration-300">Home</a>
+          <a href="#big-menu" class="text-gray-300 hover:text-yellow-400 font-semibold transition duration-300">Menu</a>
+          <a href="#about" class="text-gray-300 hover:text-yellow-400 font-semibold transition duration-300">About</a>
+          <a href="#contact" class="text-gray-300 hover:text-yellow-400 font-semibold transition duration-300">Contact</a>
+          <!-- Cart Icon -->
+<div class="relative">
+  <button id="cart-button" class="text-yellow-400 focus:outline-none hover:text-yellow-300">
+    <svg class="w-7 h-7" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+      <path stroke-linecap="round" stroke-linejoin="round" d="M3 3h2l.4 2M7 13h10l4-8H5.4M7 13L5.4 5M7 13l-1.35 2.7a1 1 0 00.9 1.3h12.2M9 21h.01M15 21h.01"></path>
+    </svg>
+    <span id="cart-count" class="absolute -top-2 -right-2 bg-red-500 text-white text-xs font-bold px-1.5 py-0.5 rounded-full">0</span>
+  </button>
+</div>
+
+        </div>
+        <!-- Mobile menu button -->
+        <div class="md:hidden">
+          <button id="mobile-menu-button" class="focus:outline-none focus:ring-2 focus:ring-yellow-400" aria-label="Toggle menu">
+            <svg class="w-8 h-8 text-yellow-400" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M4 6h16M4 12h16M4 18h16"></path>
+            </svg>
+          </button>
+        </div>
+      </div>
+    </div>
+
+    <!-- Mobile menu -->
+    <div id="mobile-menu" class="hidden md:hidden bg-gray-700 bg-opacity-90">
+        <a href="index.html" class="block px-6 py-3 text-yellow-400 font-semibold hover:bg-yellow-400 hover:text-gray-900 transition duration-300">Home</a>
+      <a href="#big-menu" class="block px-6 py-3 text-yellow-400 font-semibold hover:bg-yellow-400 hover:text-gray-900 transition duration-300">Menu</a>
+      <a href="#about" class="block px-6 py-3 text-yellow-400 font-semibold hover:bg-yellow-400 hover:text-gray-900 transition duration-300">About</a>
+      <a href="#contact" class="block px-6 py-3 text-yellow-400 font-semibold hover:bg-yellow-400 hover:text-gray-900 transition duration-300">Contact</a>
+    </div>
+  </nav>
+
+  <!-- Spacer for fixed navbar -->
+  <div class="h-16"></div>
+
+  <!-- Main Menu Section -->
+  <section id="big-menu" class="py-20 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <h2 class="text-4xl sm:text-5xl font-extrabold text-yellow-400 mb-10 text-center tracking-wide">
+      Our Delicious Menu
+    </h2>
+
+    <!-- Category Filters -->
+    <div class="flex flex-wrap justify-center gap-4 mb-14">
+      <button data-filter="all" class="filter-btn bg-yellow-400 border border-yellow-400 text-gray-900 px-5 py-2 rounded-full font-semibold hover:bg-yellow-500 hover:text-gray-900 transition duration-300 focus:outline-none focus:ring-2 focus:ring-yellow-400">
+        All
+      </button>
+      <button data-filter="starters" class="filter-btn text-yellow-400 border border-yellow-400 px-5 py-2 rounded-full font-semibold hover:bg-yellow-400 hover:text-gray-900 transition duration-300 focus:outline-none focus:ring-2 focus:ring-yellow-400">
+        Starters
+      </button>
+      <button data-filter="main" class="filter-btn text-yellow-400 border border-yellow-400 px-5 py-2 rounded-full font-semibold hover:bg-yellow-400 hover:text-gray-900 transition duration-300 focus:outline-none focus:ring-2 focus:ring-yellow-400">
+        Main Course
+      </button>
+      <button data-filter="desserts" class="filter-btn text-yellow-400 border border-yellow-400 px-5 py-2 rounded-full font-semibold hover:bg-yellow-400 hover:text-gray-900 transition duration-300 focus:outline-none focus:ring-2 focus:ring-yellow-400">
+        Desserts
+      </button>
+      <button data-filter="drinks" class="filter-btn text-yellow-400 border border-yellow-400 px-5 py-2 rounded-full font-semibold hover:bg-yellow-400 hover:text-gray-900 transition duration-300 focus:outline-none focus:ring-2 focus:ring-yellow-400">
+        Drinks
+      </button>
+    </div>
+
+    <!-- Menu Grid -->
+    <div id="menu-items" class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-8 max-w-6xl mx-auto">
+      
+      <!-- Item 1 -->
+      <div class="menu-item starters bg-gray-800 rounded-xl shadow-lg overflow-hidden hover:scale-105 transform transition duration-300 cursor-pointer">
+        <img src="https://images.unsplash.com/photo-1600891964599-f61ba0e24092?auto=format&fit=crop&w=600&q=80" alt="Spicy Paneer Tikka" class="w-full h-48 object-cover" />
+        <div class="p-5">
+          <h3 class="text-2xl font-bold mb-2">Spicy Paneer Tikka</h3>
+          <p class="text-yellow-400 font-semibold mb-3">Starters</p>
+          <p class="text-gray-300 mb-4">Soft paneer cubes marinated in spicy yogurt and grilled to perfection.</p>
+          <p class="text-yellow-400 font-bold text-xl">₹250</p>
+          <button class="add-to-cart mt-4 w-full bg-yellow-400 text-black font-bold py-2 rounded-xl shadow hover:bg-yellow-300 transition" 
+        data-name="Spicy Paneer Tikka" data-price="250">
+  +Add to Cart
+</button>
+
+        </div>
+      </div>
+
+      <!-- Item 2 -->
+      <div class="menu-item main bg-gray-800 rounded-xl shadow-lg overflow-hidden hover:scale-105 transform transition duration-300 cursor-pointer">
+        <img src="https://images.unsplash.com/photo-1551218808-94e220e084d2?auto=format&fit=crop&w=600&q=80" alt="Butter Chicken" class="w-full h-48 object-cover" />
+        <div class="p-5">
+          <h3 class="text-2xl font-bold mb-2">Butter Chicken</h3>
+          <p class="text-yellow-400 font-semibold mb-3">Main Course</p>
+          <p class="text-gray-300 mb-4">Classic Indian chicken curry cooked in creamy tomato gravy.</p>
+          <p class="text-yellow-400 font-bold text-xl">₹350</p>
+          <button class="add-to-cart mt-4 w-full bg-yellow-400 text-black font-bold py-2 rounded-xl shadow hover:bg-yellow-300 transition" 
+        data-name="Butter Chicken" data-price="350">
+  +Add to Cart
+</button>
+
+        </div>
+      </div>
+
+      <!-- Item 3 -->
+      <div class="menu-item desserts bg-gray-800 rounded-xl shadow-lg overflow-hidden hover:scale-105 transform transition duration-300 cursor-pointer">
+        <img src="https://images.unsplash.com/photo-1578985545062-69928b1d9587?auto=format&fit=crop&w=600&q=80" alt="Chocolate Lava Cake" class="w-full h-48 object-cover" />
+        <div class="p-5">
+          <h3 class="text-2xl font-bold mb-2">Chocolate Lava Cake</h3>
+          <p class="text-yellow-400 font-semibold mb-3">Desserts</p>
+          <p class="text-gray-300 mb-4">Warm chocolate cake with molten chocolate center, served with ice cream.</p>
+          <p class="text-yellow-400 font-bold text-xl">₹180</p>
+          <button class="add-to-cart mt-4 w-full bg-yellow-400 text-black font-bold py-2 rounded-xl shadow hover:bg-yellow-300 transition" 
+        data-name="Chocolate Lava Cake" data-price="180">
+  +Add to Cart
+</button>
+
+        </div>
+      </div>
+
+      <!-- Item 4 -->
+      <div class="menu-item drinks bg-gray-800 rounded-xl shadow-lg overflow-hidden hover:scale-105 transform transition duration-300 cursor-pointer">
+        <img src="https://images.unsplash.com/photo-1510626176961-4b2111b43f10?auto=format&fit=crop&w=600&q=80" alt="Mango Shake" class="w-full h-48 object-cover" />
+        <div class="p-5">
+          <h3 class="text-2xl font-bold mb-2">Mango Shake</h3>
+          <p class="text-yellow-400 font-semibold mb-3">Drinks</p>
+          <p class="text-gray-300 mb-4">Fresh mango blended with ice cream and a hint of cardamom.</p>
+          <p class="text-yellow-400 font-bold text-xl">₹120</p>
+          <button class="add-to-cart mt-4 w-full bg-yellow-400 text-black font-bold py-2 rounded-xl shadow hover:bg-yellow-300 transition" 
+        data-name="Mango Shake" data-price="120">
+  +Add to Cart
+</button>
+
+        </div>
+      </div>
+
+      <!-- Item 5 -->
+      <div class="menu-item starters bg-gray-800 rounded-xl shadow-lg overflow-hidden hover:scale-105 transform transition duration-300 cursor-pointer">
+        <img src="https://images.unsplash.com/photo-1504674900247-0877df9cc836?auto=format&fit=crop&w=600&q=80" alt="Vegetable Samosa" class="w-full h-48 object-cover" />
+        <div class="p-5">
+          <h3 class="text-2xl font-bold mb-2">Vegetable Samosa</h3>
+          <p class="text-yellow-400 font-semibold mb-3">Starters</p>
+          <p class="text-gray-300 mb-4">Crispy pastry filled with spiced potatoes and peas.</p>
+          <p class="text-yellow-400 font-bold text-xl">₹80</p>
+          <button class="add-to-cart mt-4 w-full bg-yellow-400 text-black font-bold py-2 rounded-xl shadow hover:bg-yellow-300 transition" 
+        data-name="Vegetable Samosa" data-price="80">
+  +Add to Cart
+</button>
+
+        </div>
+      </div>
+
+      <!-- Item 6 -->
+      <div class="menu-item main bg-gray-800 rounded-xl shadow-lg overflow-hidden hover:scale-105 transform transition duration-300 cursor-pointer">
+        <img src="https://images.unsplash.com/photo-1601050690465-c1627d2c479f?auto=format&fit=crop&w=600&q=80" alt="Paneer Butter Masala" class="w-full h-48 object-cover" />
+        <div class="p-5">
+          <h3 class="text-2xl font-bold mb-2">Paneer Butter Masala</h3>
+          <p class="text-yellow-400 font-semibold mb-3">Main Course</p>
+          <p class="text-gray-300 mb-4">Cottage cheese cubes cooked in rich buttery tomato gravy.</p>
+          <p class="text-yellow-400 font-bold text-xl">₹320</p>
+          <button class="add-to-cart mt-4 w-full bg-yellow-400 text-black font-bold py-2 rounded-xl shadow hover:bg-yellow-300 transition" 
+        data-name="Paneer Butter Masala" data-price="320">
+  +Add to Cart
+</button>
+
+        </div>
+      </div>
+
+      <!-- Item 7 -->
+      <div class="menu-item desserts bg-gray-800 rounded-xl shadow-lg overflow-hidden hover:scale-105 transform transition duration-300 cursor-pointer">
+        <img src="https://images.unsplash.com/photo-1562440499-64b1f14b2840?auto=format&fit=crop&w=600&q=80" alt="Gulab Jamun" class="w-full h-48 object-cover" />
+        <div class="p-5">
+          <h3 class="text-2xl font-bold mb-2">Gulab Jamun</h3>
+          <p class="text-yellow-400 font-semibold mb-3">Desserts</p>
+          <p class="text-gray-300 mb-4">Soft fried dough balls soaked in sweet rose-flavored syrup.</p>
+          <p class="text-yellow-400 font-bold text-xl">₹100</p>
+          <button class="add-to-cart mt-4 w-full bg-yellow-400 text-black font-bold py-2 rounded-xl shadow hover:bg-yellow-300 transition" 
+        data-name="Gulab Jamun" data-price="100">
+  +Add to Cart
+</button>
+
+        </div>
+      </div>
+
+      <!-- Item 8 -->
+      <div class="menu-item drinks bg-gray-800 rounded-xl shadow-lg overflow-hidden hover:scale-105 transform transition duration-300 cursor-pointer">
+        <img src="https://images.unsplash.com/photo-1542326237-8bca8a636b59?auto=format&fit=crop&w=600&q=80" alt="Masala Chai" class="w-full h-48 object-cover" />
+        <div class="p-5">
+          <h3 class="text-2xl font-bold mb-2">Masala Chai</h3>
+          <p class="text-yellow-400 font-semibold mb-3">Drinks</p>
+          <p class="text-gray-300 mb-4">Traditional Indian spiced tea brewed with milk and fresh spices.</p>
+          <p class="text-yellow-400 font-bold text-xl">₹60</p>
+          <button class="add-to-cart mt-4 w-full bg-yellow-400 text-black font-bold py-2 rounded-xl shadow hover:bg-yellow-300 transition" 
+        data-name="Masala Chai" data-price="60">
+  +Add to Cart
+</button>
+
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- About Section -->
+  <section id="about" class="bg-gray-800 py-20 px-6 max-w-5xl mx-auto rounded-lg my-20">
+    <h2 class="text-yellow-400 text-4xl font-extrabold mb-6 text-center">About FaduFood</h2>
+    <p class="text-gray-300 max-w-3xl mx-auto text-center leading-relaxed text-lg">
+      FaduFood is your ultimate destination for mouth-watering Indian delicacies crafted with love and authentic flavors. We bring you a curated menu that combines tradition and innovation. Whether you crave spicy starters or delightful desserts, we’ve got you covered with fresh, high-quality ingredients and unbeatable taste.
+    </p>
+  </section>
+
+  <!-- Contact Section -->
+  <section id="contact" class="py-20 max-w-4xl mx-auto px-6">
+    <h2 class="text-yellow-400 text-4xl font-extrabold mb-8 text-center">Get in Touch</h2>
+    <form class="bg-gray-800 rounded-lg shadow-lg p-8 max-w-lg mx-auto space-y-6">
+      <div>
+        <label for="name" class="block text-yellow-400 font-semibold mb-2">Name</label>
+        <input type="text" id="name" placeholder="Your name" class="w-full rounded-md border border-yellow-400 bg-gray-900 text-white px-4 py-2 focus:outline-none focus:ring-2 focus:ring-yellow-400" />
+      </div>
+      <div>
+        <label for="email" class="block text-yellow-400 font-semibold mb-2">Email</label>
+        <input type="email" id="email" placeholder="Your email" class="w-full rounded-md border border-yellow-400 bg-gray-900 text-white px-4 py-2 focus:outline-none focus:ring-2 focus:ring-yellow-400" />
+      </div>
+      <div>
+        <label for="message" class="block text-yellow-400 font-semibold mb-2">Message</label>
+        <textarea id="message" rows="4" placeholder="Your message" class="w-full rounded-md border border-yellow-400 bg-gray-900 text-white px-4 py-2 focus:outline-none focus:ring-2 focus:ring-yellow-400 resize-none"></textarea>
+      </div>
+      <button type="submit" class="bg-yellow-400 text-gray-900 font-bold px-6 py-3 rounded-md w-full hover:bg-yellow-500 transition duration-300">Send Message</button>
+    </form>
+  </section>
+
+  <!-- Footer -->
+  <footer class="bg-gray-900 text-gray-400 py-8 text-center text-sm">
+    © 2025 FaduFood. All rights reserved.
+  </footer>
+  <!-- Glassmorphic Cart Sidebar -->
+<div id="cart-sidebar" class="fixed top-0 right-0 h-full w-96 max-w-full bg-white/10 backdrop-blur-lg shadow-2xl transform translate-x-full transition-transform duration-300 z-50 border-l border-white/20 rounded-l-3xl flex flex-col overflow-hidden">
+  <div class="p-5 border-b border-white/20 flex justify-between items-center">
+    <h2 class="text-2xl font-extrabold text-yellow-300">🛒 Your Cart</h2>
+    <button id="close-cart" class="text-yellow-300 hover:text-yellow-200 text-3xl font-bold">&times;</button>
+  </div>
+  <div id="cart-items" class="flex-1 overflow-y-auto p-5 space-y-4 text-white"></div>
+  <div class="p-5 border-t border-white/20 bg-white/5">
+    <p class="text-lg font-bold text-yellow-300 mb-3">Total: ₹<span id="cart-total">0</span></p>
+    <button id="checkout-btn" class="w-full bg-yellow-400 text-gray-900 font-bold py-2 rounded-xl shadow hover:bg-yellow-300 transition">Checkout</button>
+  </div>
+</div>
+
+
+
+  <script>
+  const cart = [];
+  const cartSidebar = document.getElementById('cart-sidebar');
+  const cartButton = document.getElementById('cart-button');
+  const closeCart = document.getElementById('close-cart');
+  const cartItemsContainer = document.getElementById('cart-items');
+  const cartTotal = document.getElementById('cart-total');
+  const cartCount = document.getElementById('cart-count');
+  const checkoutButton = document.getElementById('checkout-btn');
+
+  cartButton.addEventListener('click', () => {
+    cartSidebar.classList.remove('translate-x-full');
+  });
+
+  closeCart.addEventListener('click', () => {
+    cartSidebar.classList.add('translate-x-full');
+  });
+
+  function updateCartUI() {
+    cartItemsContainer.innerHTML = '';
+    let total = 0;
+    cart.forEach((item, index) => {
+      total += item.price * item.quantity;
+      cartItemsContainer.innerHTML += `
+        <div class="flex justify-between items-center bg-white/10 rounded-xl px-4 py-3 shadow-sm">
+          <div>
+            <h3 class="font-semibold text-lg text-yellow-200">${item.name}</h3>
+            <p class="text-sm text-gray-300">₹${item.price} x ${item.quantity}</p>
+          </div>
+          <div class="flex items-center space-x-2">
+            <button onclick="decreaseQuantity(${index})" class="w-8 h-8 rounded-full bg-yellow-400 text-black text-lg font-bold hover:bg-yellow-300 transition">−</button>
+            <span class="text-white font-semibold">${item.quantity}</span>
+            <button onclick="increaseQuantity(${index})" class="w-8 h-8 rounded-full bg-yellow-400 text-black text-lg font-bold hover:bg-yellow-300 transition">+</button>
+            <button onclick="removeItem(${index})" class="text-red-500 text-xl font-bold hover:text-red-400 ml-2">&times;</button>
+          </div>
+        </div>
+      `;
+    });
+    cartTotal.textContent = total;
+    cartCount.textContent = cart.reduce((sum, item) => sum + item.quantity, 0);
+  }
+
+  function addToCart(name, price) {
+    const existingItem = cart.find(item => item.name === name);
+    if (existingItem) {
+      existingItem.quantity++;
+    } else {
+      cart.push({ name, price, quantity: 1 });
+    }
+    updateCartUI();
+  }
+
+  function removeItem(index) {
+    cart.splice(index, 1);
+    updateCartUI();
+  }
+
+  function increaseQuantity(index) {
+    cart[index].quantity++;
+    updateCartUI();
+  }
+
+  function decreaseQuantity(index) {
+    if (cart[index].quantity > 1) {
+      cart[index].quantity--;
+    } else {
+      removeItem(index);
+    }
+    updateCartUI();
+  }
+
+  document.querySelectorAll('.add-to-cart').forEach(button => {
+    button.addEventListener('click', () => {
+      const name = button.dataset.name;
+      const price = parseInt(button.dataset.price);
+      addToCart(name, price);
+    });
+  });
+
+  checkoutButton.addEventListener('click', () => {
+  localStorage.setItem('cart', JSON.stringify(cart));
+  window.location.href = "checkout.html";
+});
+
+
+  // Filter buttons
+  const filterButtons = document.querySelectorAll('.filter-btn');
+  const menuItems = document.querySelectorAll('.menu-item');
+
+  filterButtons.forEach(btn => {
+    btn.addEventListener('click', () => {
+      const filter = btn.getAttribute('data-filter');
+
+      menuItems.forEach(item => {
+        if (filter === 'all') {
+          item.classList.remove('hidden');
+        } else {
+          item.classList.toggle('hidden', !item.classList.contains(filter));
+        }
+      });
+
+      // Optional: highlight active button
+      filterButtons.forEach(b => b.classList.remove('bg-yellow-500', 'text-gray-900'));
+      btn.classList.add('bg-yellow-500', 'text-gray-900');
+    });
+  });
+
+  // Mobile menu toggle
+  const mobileMenuBtn = document.getElementById('mobile-menu-button');
+  const mobileMenu = document.getElementById('mobile-menu');
+
+  mobileMenuBtn.addEventListener('click', () => {
+    mobileMenu.classList.toggle('hidden');
+  });
+</script>
+
+  </script>
+</body>
+</html>
