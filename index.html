@@ -98,81 +98,45 @@
 
     <!-- Tabs -->
     <div class="flex justify-center mb-10 space-x-8">
-      <button class="menu-tab-btn text-lg font-semibold text-yellow-400 border-b-2 border-yellow-400 pb-2" data-tab="veg">Veg</button>
-      <button class="menu-tab-btn text-lg font-semibold text-gray-300 hover:text-yellow-400 pb-2" data-tab="nonveg">Non-Veg</button>
-      <button class="menu-tab-btn text-lg font-semibold text-gray-300 hover:text-yellow-400 pb-2" data-tab="drinks">Drinks</button>
+      <button class="menu-tab-btn text-lg font-semibold text-yellow-400 border-b-2 border-yellow-400 pb-2" data-tab="BREAKFAST">BREAKFAST</button>
+      <button class="menu-tab-btn text-lg font-semibold text-gray-300 hover:text-yellow-400 pb-2" data-tab="LUNCH">LUNCH</button>
+      <button class="menu-tab-btn text-lg font-semibold text-gray-300 hover:text-yellow-400 pb-2" data-tab="DINNER">DINNER</button>
     </div>
 
     <!-- Menu Items Container -->
     <div>
       <!-- Veg Menu -->
-      <div class="menu-tab" id="veg">
+      <div class="menu-tab" id="BREAKFAST">
         <div class="grid md:grid-cols-3 gap-8">
           <div class="bg-gray-700 rounded-lg p-5 hover:scale-105 transform transition duration-300 shadow-lg">
-            <img src="https://images.unsplash.com/photo-1600891964599-f61ba0e24092?auto=format&fit=crop&w=600&q=80" alt="Paneer Butter Masala" class="rounded-md mb-4 w-full h-48 object-cover" />
-            <h3 class="text-xl font-semibold mb-2">Paneer Butter Masala</h3>
-            <p class="mb-2 text-gray-300">Creamy tomato gravy with soft paneer cubes.</p>
-            <p class="font-bold text-yellow-400">₹250</p>
-          </div>
-          <div class="bg-gray-700 rounded-lg p-5 hover:scale-105 transform transition duration-300 shadow-lg">
-            <img src="https://images.unsplash.com/photo-1568605114967-8130f3a36994?auto=format&fit=crop&w=600&q=80" alt="Veg Biryani" class="rounded-md mb-4 w-full h-48 object-cover" />
-            <h3 class="text-xl font-semibold mb-2">Veg Biryani</h3>
-            <p class="mb-2 text-gray-300">Aromatic basmati rice with mixed vegetables.</p>
-            <p class="font-bold text-yellow-400">₹220</p>
-          </div>
-          <div class="bg-gray-700 rounded-lg p-5 hover:scale-105 transform transition duration-300 shadow-lg">
-            <img src="https://images.unsplash.com/photo-1604908177529-dbd431e53d1b?auto=format&fit=crop&w=600&q=80" alt="Masala Dosa" class="rounded-md mb-4 w-full h-48 object-cover" />
-            <h3 class="text-xl font-semibold mb-2">Masala Dosa</h3>
-            <p class="mb-2 text-gray-300">Crispy dosa with spiced potato filling.</p>
-            <p class="font-bold text-yellow-400">₹180</p>
+            <img src="images/thali.png" alt="BREAKFAST" class="rounded-md mb-4 w-full h-48 object-cover" />
+            <h3 class="text-xl font-semibold mb-2">BREAKFAST</h3>
+            <p class="mb-2 text-gray-300">Any one of them(poha, pasta, prantha, chila, sandwich, namkin rice)+curd+ salad</p>
+            <p class="font-bold text-yellow-400">₹100</p>
           </div>
         </div>
       </div>
 
       <!-- Non-Veg Menu -->
-      <div class="menu-tab hidden" id="nonveg">
+      <div class="menu-tab hidden" id="LUNCH">
         <div class="grid md:grid-cols-3 gap-8">
           <div class="bg-gray-700 rounded-lg p-5 hover:scale-105 transform transition duration-300 shadow-lg">
-            <img src="https://images.unsplash.com/photo-1613145992053-7e5b0e4ca7cd?auto=format&fit=crop&w=600&q=80" alt="Butter Chicken" class="rounded-md mb-4 w-full h-48 object-cover" />
-            <h3 class="text-xl font-semibold mb-2">Butter Chicken</h3>
-            <p class="mb-2 text-gray-300">Tender chicken in creamy tomato sauce.</p>
-            <p class="font-bold text-yellow-400">₹350</p>
-          </div>
-          <div class="bg-gray-700 rounded-lg p-5 hover:scale-105 transform transition duration-300 shadow-lg">
-            <img src="https://images.unsplash.com/photo-1543352634-7d1bbf862290?auto=format&fit=crop&w=600&q=80" alt="Fish Curry" class="rounded-md mb-4 w-full h-48 object-cover" />
-            <h3 class="text-xl font-semibold mb-2">Fish Curry</h3>
-            <p class="mb-2 text-gray-300">Spicy and tangy fish cooked to perfection.</p>
-            <p class="font-bold text-yellow-400">₹320</p>
-          </div>
-          <div class="bg-gray-700 rounded-lg p-5 hover:scale-105 transform transition duration-300 shadow-lg">
-            <img src="https://images.unsplash.com/photo-1600891964343-b9f645f57ac9?auto=format&fit=crop&w=600&q=80" alt="Chicken Tikka" class="rounded-md mb-4 w-full h-48 object-cover" />
-            <h3 class="text-xl font-semibold mb-2">Chicken Tikka</h3>
-            <p class="mb-2 text-gray-300">Smoky grilled chicken pieces.</p>
-            <p class="font-bold text-yellow-400">₹300</p>
+            <img src="images/thali.png" alt="LUNCH" class="rounded-md mb-4 w-full h-48 object-cover" />
+            <h3 class="text-xl font-semibold mb-2">LUNCH</h3>
+            <p class="mb-2 text-gray-300">2 Sabji + 4 Roti + Rice + Salad + Sweet</p>
+            <p class="font-bold text-yellow-400">₹120</p>
           </div>
         </div>
       </div>
 
       <!-- Drinks Menu -->
-      <div class="menu-tab hidden" id="drinks">
+      <div class="menu-tab hidden" id="DINNER">
         <div class="grid md:grid-cols-3 gap-8">
           <div class="bg-gray-700 rounded-lg p-5 hover:scale-105 transform transition duration-300 shadow-lg">
-            <img src="https://images.unsplash.com/photo-1510626176961-4b0d776a0b89?auto=format&fit=crop&w=600&q=80" alt="Mango Shake" class="rounded-md mb-4 w-full h-48 object-cover" />
-            <h3 class="text-xl font-semibold mb-2">Mango Shake</h3>
-            <p class="mb-2 text-gray-300">Fresh mango blended with milk and ice.</p>
+            <img src="images/thali.png" alt="DINNER" class="rounded-md mb-4 w-full h-48 object-cover" />
+            <h3 class="text-xl font-semibold mb-2">DINNER</h3>
+            <p class="mb-2 text-gray-300">2 Sabji + 4 Roti + Rice + Salad + Sweet</p>
             <p class="font-bold text-yellow-400">₹120</p>
-          </div>
-          <div class="bg-gray-700 rounded-lg p-5 hover:scale-105 transform transition duration-300 shadow-lg">
-            <img src="https://images.unsplash.com/photo-1509042239860-f550ce710b93?auto=format&fit=crop&w=600&q=80" alt="Lemonade" class="rounded-md mb-4 w-full h-48 object-cover" />
-            <h3 class="text-xl font-semibold mb-2">Lemonade</h3>
-            <p class="mb-2 text-gray-300">Refreshing lemon drink with mint.</p>
-            <p class="font-bold text-yellow-400">₹100</p>
-          </div>
-          <div class="bg-gray-700 rounded-lg p-5 hover:scale-105 transform transition duration-300 shadow-lg">
-            <img src="https://images.unsplash.com/photo-1524594157367-5e2135f75c0a?auto=format&fit=crop&w=600&q=80" alt="Coffee" class="rounded-md mb-4 w-full h-48 object-cover" />
-            <h3 class="text-xl font-semibold mb-2">Coffee</h3>
-            <p class="mb-2 text-gray-300">Strong and aromatic hot coffee.</p>
-            <p class="font-bold text-yellow-400">₹110</p>
           </div>
         </div>
       </div>
